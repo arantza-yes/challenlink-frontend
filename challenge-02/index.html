@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>User CRUD</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-app">
+    <!-- CODE HERE -->
+    <div id="app" class="container mt-5">
+      <!-- <h3>ToDo List CRUD</h3> -->
+      <h3 class="text-white fw-bold">{{ titulo }}</h3>
+      <input
+        type="text"
+        class="form-control my-3"
+        v-model="newName"
+        placeholder="Nombre"
+      />
+      <input
+        type="text"
+        class="form-control my-3"
+        v-model="newApellido"
+        placeholder="Apellido"
+      />
+      <input
+        type="number"
+        class="form-control my-3"
+        v-model="newEdad"
+        placeholder="Edad"
+      />
+      <button @click="agregarUsuario" class="btn bg-info text-white fw-bold">
+        Agregar Usuario
+      </button>
+
+      <!-- <h5>{{ newName }}</h5>
+      <h5>{{ newApellido }}</h5>
+      <h5>{{ newEdad}}</h5> -->
+
+      <div class="mt-3">
+        <table class="table text-white">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Edad</th>
+              <th scope="col">Opciones</th>
+            </tr>
+          </thead>
+          <tbody v-for="(item, index) of usuarios">
+            <tr>
+              <th scope="row">{{ index + 1 }}</th>
+              <td>{{ item.nombre }}</td>
+              <td>{{ item.apellido }}</td>
+              <td>{{ item.edad }}</td>
+              <td>
+                <span style="cursor: pointer" @click="editUser(index)"
+                  ><img src="./images/editar-archivo.png" alt=""
+                /></span>
+                <span style="cursor: pointer" @click="deleteUser(index)"
+                  ><img src="./images/borrar-mensaje.png" alt=""
+                /></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

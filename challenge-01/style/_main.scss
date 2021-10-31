@@ -1,0 +1,124 @@
+@import 'variables';
+@import 'mixin';
+
+.container {
+  background-color: $colorBackground;
+  @include flexVariations(center, center, column);
+}
+
+.filter {
+  border: $border;
+  border-radius: $borderRadius;
+  margin-top: 50px;
+  width: 800px;
+  height: 100px;
+  background-color: $colorBackgroundWhite;
+  @include flex();
+
+  input[type='text'] {
+    color: #222;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1.6;
+    width: 200px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: $border;
+    border-radius: 5px 0px 0px 5px;
+  }
+
+  input[type='button'] {
+    width: 100px;
+    background-color: $colorSeconday;
+    color: $textColor;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 0;
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+  }
+
+  input[type='button']:focus {
+    outline: none;
+  }
+}
+
+.pokemon-container {
+  width: 100%;
+  // border: $borderprueba;
+  @include flex();
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.pokemon-block {
+  width: 300px;
+  border: $border;
+  margin: 20px;
+  background-color: $colorBackgroundWhite;
+  border-radius: $borderRadius;
+  @include flexVariations(center, center, column);
+}
+
+.img-container {
+  background-image: url('../images/blob.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.number {
+  color: $colorSeconday;
+  font-weight: bold;
+  text-align: center;
+}
+
+.name {
+  color: $colorPrimary;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.pokemon-block-progress {
+  // border: $borderprueba;
+  width: 300px;
+  // height: 70px;
+}
+
+.stats-container {
+  @include flex();
+}
+.statName {
+  color: $colorPrimary;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.progress-bar {
+  color: $colorSeconday;
+
+  margin: auto;
+  padding-bottom: 7px;
+}
+
+.pagination {
+  width: 800px;
+  // border: $borderprueba;
+  @include flexVariations(space-between, center, 0);
+  li {
+    list-style: none;
+    a {
+      background-color: $colorSeconday;
+      color: $textColor;
+      padding: 5px 15px 5px 15px;
+      border-radius: $borderRadius;
+    }
+  }
+}
+
+.filteredOut {
+  display: none;
+}

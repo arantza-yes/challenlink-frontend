@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>POKEMON LIST</title>
+    <link rel="stylesheet" href="./public/style.css" />
+  </head>
+  <body>
+    <!-- CODE HERE -->
+    <header class="title">
+      <h1 class="title__h1">Pokemon List</h1>
+    </header>
+    <main class="container">
+      <div class="filter">
+        <input
+          type="text"
+          name=""
+          id="searchPoke"
+          placeholder="Search by name"
+        />
+        <input id="search" type="button" value="Search" />
+      </div>
+      <div class="pokemon-container"></div>
+
+      <div class="pokemon-container-filter"></div>
+      <!-- cards -->
+      <nav class="pagination1" aria-label="...">
+        <ul class="pagination">
+          <li class="page-item" id="previous">
+            <a class="page-link" href="#" tabindex="-1"
+              ><span><-</span> Previous
+            </a>
+          </li>
+          <li class="page-item" id="next">
+            <a class="page-link" href="#">Next <span>-></span></a>
+          </li>
+        </ul>
+      </nav>
+    </main>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>
