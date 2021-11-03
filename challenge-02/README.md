@@ -40,6 +40,6 @@ Develop a CRUD (Create, Read, Update and Delete) of users.
 - inicie vue con new vue
 - en data, puse usuarios para llenar los datos ahi dentro con un objeto
 - en methods, tiene agregar usuarios con una function esta tomando usuarios de data para llenar con push nombre, apellido, edad, y la fecha de creacion
-- en editUser cuando le das click al boton editar se llena los datos de cada usuario por su index pero tiene un bug que cuando le das guardar lo actualiza guardando uno nuevo
+- en editUser cuando le das click al boton editar se llena los datos de cada usuario por su index y cuando le das click al boton actualizar, actualiza los datos.
 - y en deleteUser borra cada index osea cada usuario
 - en created pregunta si getItem esta vacio le pone un array vacio y si esta lleno pinta los datos del localStorage que esta en un array de objetos, y lo crea en agregar, editar y borrar.

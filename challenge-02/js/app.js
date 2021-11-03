@@ -3,7 +3,7 @@ const app = new Vue({
   data: {
     titulo: 'User CRUD',
     usuarios: [],
-    // index: this.user,
+    edit: false,
     newName: '',
     newApellido: '',
     newEdad: '',
@@ -32,6 +32,23 @@ const app = new Vue({
       this.newEdad = user.edad;
       // agregarUsuario(this.user);
     },
+
+    updateUser: function (e, index) {
+      e.preventDefault();
+      let userDB = {
+        nombre: this.newName,
+        apellido: this.newApellido,
+        edad: this.newEdad,
+      };
+      this.usuarios[index] = userDB;
+      localStorage.setItem('usuariosDB', JSON.stringify(this.usuarios));
+      let db = JSON.parse(localStorage.getItem('usuariosDB'));
+      this.usuarios = db;
+      this.newName = '';
+      this.newApellido = '';
+      this.newEdad = '';
+    },
+
     deleteUser: function (index) {
       this.usuarios.splice(index, 1);
       localStorage.setItem('usuariosDB', JSON.stringify(this.usuarios));

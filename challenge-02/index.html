@@ -65,12 +65,23 @@
               <td>{{ item.apellido }}</td>
               <td>{{ item.edad }}</td>
               <td>
-                <span style="cursor: pointer" @click="editUser(index)"
-                  ><img src="./images/editar-archivo.png" alt=""
-                /></span>
-                <span style="cursor: pointer" @click="deleteUser(index)"
-                  ><img src="./images/borrar-mensaje.png" alt=""
-                /></span>
+                <button
+                  class="btn btn-primary"
+                  @click="updateUser($event,index)"
+                >
+                  actualizar
+                </button>
+                <button class="btn bg-info text-white" @click="editUser(index)">
+                  Editar
+                  <img src="./images/editar-archivo.png" alt="" />
+                </button>
+                <button
+                  class="btn bg-danger text-white"
+                  @click="deleteUser(index)"
+                >
+                  Eliminar
+                  <img src="./images/borrar-mensaje.png" alt="" />
+                </button>
               </td>
             </tr>
           </tbody>
